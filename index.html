@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXAMEN GENERAL DE TRABAJOS EN ALTURAS</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <style>
+    /* Estilos globales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 5px;
+    }
+    header {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    /* Logo a la izquierda */
+    .logo-left {
+      float: left;
+      width: 100px;
+      margin-right: 10px;
+    }
+    /* Logo a la derecha */
+    .logo-right {
+      float: right;
+      width: 100px;
+      margin-left: 10px;
+    }
+    h1 {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 100px; /* Alinea verticalmente el título respecto a los logos */
+    }
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    /* Estilos del examen */
+    .question {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+    .options label {
+      margin-right: 10px;
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+    @media (max-width: 600px) {
+      .options label {
+        font-size: 14px;
+      }
+      button {
+        font-size: 16px;
+      }
+      h1 {
+        font-size: 20px;
+        line-height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="clearfix">
+    <!-- Reemplaza las rutas de imagen con las correctas -->
+    <img src="URL_ICONO_IZQUIERDO" alt="Logo Izquierdo" class="logo-left">
+    <img src="URL_ICONO_DERECHO" alt="Logo Derecho" class="logo-right">
+    <h1>EXAMEN GENERAL DE TRABAJOS EN ALTURAS</h1>
+  </header>
+  
+  <p>Ingresa tu nombre y correo, y responde las siguientes preguntas.</p>
+  
+  <label>Nombre: <input type="text" id="name" placeholder="Tu nombre"></label>
+  <label>Correo: <input type="email" id="email" placeholder="tu@correo.com"></label>
+  
+  <form id="examForm">
+    <!-- Pregunta 1 -->
+    <div class="question">
+      <p>1. ¿Cómo hacer limpieza o mantenimiento a un arnés?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> a) Utilizando alcohol para limpiar y secar al sol</label>
+        <label><input type="radio" name="q1" value="b"> b) Con jabón especial para arneses, agua y secar a la sombra</label>
+        <label><input type="radio" name="q1" value="c"> c) Con agua a presión y jabón</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 2 -->
+    <div class="question">
+      <p>2. Selecciona los sistemas de seguridad para trabajos en altura</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> a) Contra caídas, posicionamiento, suspensión, rescate</label>
+        <label><input type="radio" name="q2" value="b"> b) Contra caídas, posicionamiento y rescate</label>
+        <label><input type="radio" name="q2" value="c"> c) Contra caídas, suspensión, rescate y vertical</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 3 -->
+    <div class="question">
+      <p>3. ¿Cuáles son los elementos del ABC de seguridad?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> a) Anchorage, Positioning Harness, Lanyard</label>
+        <label><input type="radio" name="q3" value="b"> b) Anchorage, Body Harness, Connecting device</label>
+        <label><input type="radio" name="q3" value="c"> c) Anchorage, Body Harness, Connecting device (alternativa)</label>
+        <label><input type="radio" name="q3" value="d"> d) Anchorage connector, Body Harness, Connecting device</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 4 -->
+    <div class="question">
+      <p>4. ¿Qué se debe hacer con un equipo que presenta condiciones inseguras?</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a"> a) Reportarlo al área responsable para su señalización</label>
+        <label><input type="radio" name="q4" value="b"> b) Identificar, reportar, retirar y destruir</label>
+        <label><input type="radio" name="q4" value="c"> c) Retirar y almacenar por separado</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 5 -->
+    <div class="question">
+      <p>5. Cuando se inspecciona un arnés, ¿qué se le revisa a las cintas?</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> a) No debe presentar roturas de fibras, desgarres o descocidos, orificios, moho, quemaduras</label>
+        <label><input type="radio" name="q5" value="b"> b) No debe presentar superficies ásperas o rugosas, bordes afilados, deformaciones</label>
+        <label><input type="radio" name="q5" value="c"> c) No debe presentar activación de indicadores de impacto, deshilados, desprendimiento</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 6 -->
+    <div class="question">
+      <p>6. ¿Cuánto es el tiempo de vigencia de un producto HAWK?</p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="a"> a) 3 años</label>
+        <label><input type="radio" name="q6" value="b"> b) No tiene vigencia</label>
+        <label><input type="radio" name="q6" value="c"> c) 5 años</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 7 -->
+    <div class="question">
+      <p>7. Un trabajador realizará un mantenimiento a 4 metros de altura, siempre estará anclado de su anillo dorsal. ¿Cuál sería el equipo básico para trabajo en altura?</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="a"> a) Cable contra caídas, punto de anclaje, arnés contra caídas</label>
+        <label><input type="radio" name="q7" value="b"> b) Cables contra caídas, punto de anclaje, arnés de posicionamiento</label>
+        <label><input type="radio" name="q7" value="c"> c) Retráctil, arnés contra caídas, punto fijo</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 8 -->
+    <div class="question">
+      <p>8. Una industria del sector alimenticio busca equipo de protección contra caídas, el ambiente es inocuo y buscan solo equipos que no generen corrosión. ¿Cuál línea puedo recomendar?</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a"> a) Alpha</label>
+        <label><input type="radio" name="q8" value="b"> b) Beta</label>
+        <label><input type="radio" name="q8" value="c"> c) Gamma</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 9 -->
+    <div class="question">
+      <p>9. Un contratista busca equipo para trabajos en general, accesible. ¿Qué línea puedo ofrecer?</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="a"> a) Alpha</label>
+        <label><input type="radio" name="q9" value="b"> b) Beta</label>
+        <label><input type="radio" name="q9" value="c"> c) Gamma</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 10 -->
+    <div class="question">
+      <p>10. Una industria busca equipo de protección contra caídas de color rojo para sus brigadas de rescate. ¿Qué línea puedo ofrecer?</p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="a"> a) Alpha</label>
+        <label><input type="radio" name="q10" value="b"> b) Beta</label>
+        <label><input type="radio" name="q10" value="c"> c) Gamma</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 11 -->
+    <div class="question">
+      <p>11. ¿Qué distancia mínima necesito para poder utilizar de forma segura un cable contra caídas?</p>
+      <div class="options">
+        <label><input type="radio" name="q11" value="a"> a) 1.8mt</label>
+        <label><input type="radio" name="q11" value="b"> b) 1.20 mt</label>
+        <label><input type="radio" name="q11" value="c"> c) 6 mt</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 12 -->
+    <div class="question">
+      <p>12. ¿Qué distancia se considera un trabajo en alturas según la NOM-009-STPS-2011?</p>
+      <div class="options">
+        <label><input type="radio" name="q12" value="a"> a) 3mt</label>
+        <label><input type="radio" name="q12" value="b"> b) 2mt</label>
+        <label><input type="radio" name="q12" value="c"> c) 1.8mt</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 13 -->
+    <div class="question">
+      <p>13. ¿Cómo puedo verificar y tener la certeza si un equipo es certificado?</p>
+      <div class="options">
+        <label><input type="radio" name="q13" value="a"> a) Revisando la etiqueta para ver si menciona ANSI u otra norma</label>
+        <label><input type="radio" name="q13" value="b"> b) Solicitando el certificado al fabricante y validarlo en la página del organismo certificador</label>
+        <label><input type="radio" name="q13" value="c"> c) Con la afirmación del fabricante basta</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 14 -->
+    <div class="question">
+      <p>14. Un soldador realizará un trabajo de soldadura en alturas. ¿Qué equipo le puedes recomendar?</p>
+      <div class="options">
+        <label><input type="radio" name="q14" value="a"> a) línea Gamma: arnés, punto fijo, cable contra caídas</label>
+        <label><input type="radio" name="q14" value="b"> b) línea Alpha: arnés, punto fijo, cable contra caídas</label>
+        <label><input type="radio" name="q14" value="c"> c) línea speciality: arnés, punto fijo, cable contra caídas</label>
+      </div>
+    </div>
+    
+    <!-- Pregunta 15 -->
+    <div class="question">
+      <p>15. ¿Cuál es el principal diferenciador de Hawk?</p>
+      <div class="options">
+        <label><input type="radio" name="q15" value="a"> a) Certificación</label>
+        <label><input type="radio" name="q15" value="b"> b) Empresa nacional</label>
+        <label><input type="radio" name="q15" value="c"> c) Garantías</label>
+      </div>
+    </div>
+    
+    <button type="button" onclick="evaluateExam()">Enviar Examen</button>
+  </form>
+  
+  <div id="result"></div>
+  
+  <script>
+    // Inicializa EmailJS (reemplaza con tu clave pública)
+    emailjs.init("Zv3nnLKcSo4bxYo3d");
+    
+    function evaluateExam() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      
+      if (!name || !email) {
+        alert("Por favor, ingresa tu nombre y correo.");
+        return;
+      }
+      
+      // Respuestas correctas
+      var answers = {
+        q1: "b",
+        q2: "a",
+        q3: "d",
+        q4: "b",
+        q5: "a",
+        q6: "b",
+        q7: "c",
+        q8: "a",
+        q9: "c",
+        q10: "b",
+        q11: "c",
+        q12: "c",
+        q13: "b",
+        q14: "c",
+        q15: "a"
+      };
+      
+      var correctCount = 0;
+      var totalQuestions = 15;
+      
+      // Verifica cada pregunta y cuenta respuestas correctas
+      for (var i = 1; i <= totalQuestions; i++) {
+        var radios = document.getElementsByName('q' + i);
+        var answered = false;
+        for (var j = 0; j < radios.length; j++) {
+          if (radios[j].checked) {
+            answered = true;
+            if (radios[j].value === answers['q' + i]) {
+              correctCount++;
+            }
+          }
+        }
+        if (!answered) {
+          alert("Por favor, responde la pregunta " + i + ".");
+          return;
+        }
+      }
+      
+      var score = (correctCount / totalQuestions) * 100;
+      var message = "Nombre: " + name + "\nPuntaje: " + correctCount + "/" + totalQuestions + " (" + score.toFixed(1) + "%)";
+      
+      // Muestra el resultado en la página
+      document.getElementById("result").innerHTML = "<h2>Resultado</h2><p>" + message.replace(/\n/g, "<br>") + "</p>";
+      
+      // Configura los parámetros para el correo
+      var templateParams = {
+        user_name: name,
+        user_email: email,
+        test_score: message
+      };
+      
+      // Envía el correo usando EmailJS (reemplaza con tu Service ID y Template ID)
+      emailjs.send("service_d9gzgtk", "template_ca0fj37", templateParams)
+        .then(function() {
+          alert("Resultado enviado a tu correo");
+        })
+        .catch(function(error) {
+          alert("Error al enviar el correo: " + JSON.stringify(error));
+        });
+    }
+  </script>
+</body>
+</html>
